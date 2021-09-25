@@ -4,11 +4,23 @@ dependency:
 driver:
   name: podman
 platforms:
-  - name: instance
-    image: docker.io/pycontribs/centos:7
+  - name: debian
+    image: docker.io/debian:latest
+    pre_build_image: true
+  - name: fedora
+    image: docker.io/fedora:latest
+    pre_build_image: true
+  - name: opensuse
+    image: docker.io/opensuse/tumbleweed:latest
     pre_build_image: true
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      interpreter_python: auto_silent
+      callback_whitelist: profile_tasks, timer, yaml
+    ssh_connection:
+      pipelining: false
 verifier:
   name: ansible
 lint: |

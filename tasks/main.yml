@@ -1,2 +1,21 @@
 ---
-# tasks file for ansible-role-brave
+- name: Install DNF Core plugins
+  yum:
+    name: dnf-plugins-core
+    state: present
+
+- name: dnf install
+  yum_repository:
+    name: dnf-plugins-core
+    description: asd
+    baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+
+- name: dnf install
+  rpm_key:
+    key: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    state: present
+
+- name: Install Brave Browser
+  yum:
+    name: dnf-plugins-core
+    state: present

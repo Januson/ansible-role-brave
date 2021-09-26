@@ -2,8 +2,13 @@
 extends: default
 
 rules:
+  line-length:
+    max: 180
+    level: warning
   document-start:
     level: error
+  truthy:
+    allowed-values: ["yes", "no"]
 
 ignore: |
   **/lib/

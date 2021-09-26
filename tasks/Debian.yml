@@ -1,0 +1,19 @@
+---
+- name: Get keyring file
+  get_url:
+    url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+    dest: "/usr/share/keyrings/brave-browser-archive-keyring.gpg"
+
+- name: Add Brave repository
+  copy:
+    content: "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"
+    dest: /etc/apt/sources.list.d/brave-browser-release.list
+  notify: apt update
+
+- name: Make sure all handlers run
+  meta: flush_handlers
+
+- name: Install Brave Browser
+  apt:
+    name: brave-browser
+    state: present

@@ -1,0 +1,17 @@
+---
+- name: rpm key
+  rpm_key:
+    key: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    state: present
+
+- name: brave repo
+  zypper_repository:
+    name: brave-browser
+    repo: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+    state: present
+
+- name: Install Brave Browser
+  zypper:
+    name: brave-browser
+    update_cache: yes
+    state: present

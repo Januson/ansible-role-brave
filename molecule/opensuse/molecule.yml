@@ -4,11 +4,8 @@ dependency:
 driver:
   name: podman
 platforms:
-  - name: debian
-    image: docker.io/pycontribs/debian:latest
-    pre_build_image: yes
-  - name: fedora
-    image: docker.io/pycontribs/fedora:latest
+  - name: opensuse
+    image: docker.io/opensuse/leap:latest
     pre_build_image: yes
 provisioner:
   name: ansible

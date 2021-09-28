@@ -1,0 +1,20 @@
+---
+- name: Converge
+  hosts: all
+  gather_facts: no
+
+  pre_tasks:
+    - name: Check if required packages are already installed
+      raw: rpm -q python-xml
+      ignore_errors: yes
+      register: package_check
+
+    - name: Install python xml
+      raw: zypper --non-interactive install python-xml python2-pyOpenSSL
+      when: package_check['failed'] == true
+
+    - name: Gathering facts
+      setup:
+
+  roles:
+    - januson.brave

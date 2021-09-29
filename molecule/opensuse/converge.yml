@@ -6,7 +6,8 @@
   pre_tasks:
     - name: Check if required packages are already installed
       raw: rpm -q python-xml
-      ignore_errors: yes
+      failed_when: no
+      changed_when: no
       register: package_check
 
     - name: Install python xml

@@ -1,12 +1,15 @@
 ---
 dependency:
   name: galaxy
+
 driver:
-  name: podman
+  name: docker
+
 platforms:
   - name: opensuse
     image: docker.io/opensuse/leap:latest
     pre_build_image: yes
+
 provisioner:
   name: ansible
   config_options:
@@ -15,8 +18,10 @@ provisioner:
       callback_whitelist: profile_tasks, timer, yaml
     ssh_connection:
       pipelining: no
+
 verifier:
   name: ansible
+
 lint: |
   set -e
   yamllint .

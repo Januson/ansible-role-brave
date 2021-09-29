@@ -1,8 +1,10 @@
 ---
 dependency:
   name: galaxy
+
 driver:
-  name: podman
+  name: docker
+
 platforms:
   - name: debian
     image: docker.io/pycontribs/debian:latest
@@ -10,6 +12,7 @@ platforms:
   - name: fedora
     image: docker.io/pycontribs/fedora:latest
     pre_build_image: yes
+
 provisioner:
   name: ansible
   config_options:
@@ -18,8 +21,10 @@ provisioner:
       callback_whitelist: profile_tasks, timer, yaml
     ssh_connection:
       pipelining: no
+
 verifier:
   name: ansible
+
 lint: |
   set -e
   yamllint .

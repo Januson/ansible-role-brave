@@ -12,7 +12,7 @@
 
     - name: Install python xml
       raw: zypper --non-interactive install python-xml python2-pyOpenSSL
-      when: package_check['failed'] == true
+      when: package_check.rc != 0
 
     - name: Gathering facts
       setup:

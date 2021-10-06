@@ -1,1 +1,10 @@
 ---
+brave_channel_label:
+  "release": ""
+  "beta": -beta
+  "nightly": -nightly
+
+brave_keyring_file: "/usr/share/keyrings/brave-browser{{ brave_channel_label[brave_channel] }}-archive-keyring.gpg"
+brave_keyring_url: "https://brave-browser-apt-{{ brave_channel }}.s3.brave.com/brave-browser{{ brave_channel_label[brave_channel] }}-archive-keyring.gpg"
+brave_repo_file: "/etc/apt/sources.list.d/brave-browser-{{ brave_channel }}.list"
+brave_repo_url: "https://brave-browser-apt-{{ brave_channel }}.s3.brave.com/"

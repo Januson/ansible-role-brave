@@ -1,4 +1,10 @@
 ---
+# TODO
+# - name: Set GPG key URL for beta/nightly
+#  set_fact:
+#    brave_gpg_key_url: https://brave-browser-rpm-{{ brave_channel }}.s3.brave.com/brave-core-nightly.asc
+#  when: brave_channel != 'release'
+
 - name: Add Brave RPM key
   rpm_key:
     key: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc

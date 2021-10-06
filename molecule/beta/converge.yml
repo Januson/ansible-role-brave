@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+
+  vars:
+    brave_channel: beta
+
+  roles:
+    - januson.brave

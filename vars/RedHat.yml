@@ -1,3 +1,8 @@
 ---
-brave_gpg_key_url: https://brave-browser-rpm-{{ brave_channel }}.s3.brave.com/brave-core.asc
-# brave_gpg_key_url: https://brave-browser-rpm-{{ brave_channel }}.s3.brave.com/brave-core-nightly.asc
+brave_channel_label:
+  "release": ""
+  "beta": -beta
+  "nightly": -nightly
+
+brave_gpg_key_url: https://brave-browser-rpm-{{ brave_channel }}.s3.brave.com/brave-core{{ brave_channel_label[brave_channel] }}.asc
+brave_repo_url: https://brave-browser-rpm-{{ brave_channel }}.s3.brave.com/x86_64/

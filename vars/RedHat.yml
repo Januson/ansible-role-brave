@@ -2,7 +2,7 @@
 brave_gpg_key_url:
   "release": "https://brave-browser-rpm-release.s3.brave.com/brave-core.asc"
   "beta": "https://brave-browser-rpm-beta.s3.brave.com/brave-core-nightly.asc"
-  "nightly": "https://brave-browser-rpm-nightly.s3.brave.com/brave-core.asc"
+  "nightly": "https://brave-browser-rpm-nightly.s3.brave.com/brave-core-nightly.asc"
 brave_repo_url:
   "release": "https://brave-browser-rpm-release.s3.brave.com/x86_64/"
   "beta": "https://brave-browser-rpm-beta.s3.brave.com/x86_64/"

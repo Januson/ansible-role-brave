@@ -1,19 +1,19 @@
 ---
 - name: Add Brave RPM key
   rpm_key:
-    key: "{{ brave_gpg_key_url }}"
+    key: "{{ brave_gpg_key_url[brave_channel] }}"
     state: present
 
 - name: Add Brave repository
   yum_repository:
     name: brave-browser
     description: Brave Browser
-    baseurl: "{{ brave_repo_url }}"
+    baseurl: "{{ brave_repo_url[brave_channel] }}"
     gpgcheck: yes
     enabled: yes
     state: present
 
 - name: Install Brave Browser
   yum:
-    name: "brave-browser{{ brave_channel_label[brave_channel] }}"
+    name: "{{ brave_package[brave_channel] }}"
     state: present

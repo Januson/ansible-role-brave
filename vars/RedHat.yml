@@ -1,8 +1,9 @@
 ---
-brave_channel_label:
-  "release": ""
-  "beta": -beta
-  "nightly": -nightly
-
-brave_gpg_key_url: https://brave-browser-rpm-{{ brave_channel }}.s3.brave.com/brave-core{{ brave_channel_label[brave_channel] }}.asc
-brave_repo_url: https://brave-browser-rpm-{{ brave_channel }}.s3.brave.com/x86_64/
+brave_gpg_key_url:
+  "release": "https://brave-browser-rpm-release.s3.brave.com/brave-core.asc"
+  "beta": "https://brave-browser-rpm-beta.s3.brave.com/brave-core-nightly.asc"
+  "nightly": "https://brave-browser-rpm-nightly.s3.brave.com/brave-core.asc"
+brave_repo_url:
+  "release": "https://brave-browser-rpm-release.s3.brave.com/x86_64/"
+  "beta": "https://brave-browser-rpm-beta.s3.brave.com/x86_64/"
+  "nightly": "https://brave-browser-rpm-nightly.s3.brave.com/x86_64/"

@@ -16,5 +16,5 @@
 
 - name: Install Brave Browser
   apt:
-    name: "brave-browser{{ brave_channel_label[brave_channel] }}"
+    name: "{{ brave_package[brave_channel] }}"
     state: present

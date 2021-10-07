@@ -25,6 +25,8 @@ jobs:
         scenario:
           - default
           - opensuse
+          - beta
+          - nightly
     steps:
       - name: checkout
         uses: actions/checkout@v2
